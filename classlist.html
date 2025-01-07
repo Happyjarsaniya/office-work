@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title" class="main message ">Class Change</h1>
+
+    <div id="container">      
+        <button type="button" onclick="console.log('button clicked')">Click Here</button>
+        <button type="button" onclick="dismsg()">Click  </button>
+        <button id="btn" type="button" onclick="console.log(this.id);">Click id  </button>
+  
+    </div>
+<script>
+    let title=document.getElementById("title");
+    title.classList.add("new");
+    title.classList.remove("message");
+    title.classList.replace("new","news");
+    // class available or not
+    title.classList.contains("main")
+    console.log(title.classList.contains("main"));
+    
+    console.log(title);
+    function dismsg(){
+        console.log('btn clicked from FN');
+        
+    }
+
+    //id
+    let btn =document.getElementById("btn");
+    btn.onclick = function(){
+        console.log(this.id);
+        
+    }
+
+    btn.addEventListener('click',function(event){
+        console.log(event.type);  
+    })
+    btn.addEventListener('click',dismsg);
+    btn.removeEventListener('click',dismsg);
+
+    
+</script>
+</body>
+</html>
